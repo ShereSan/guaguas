@@ -4,7 +4,6 @@ const jwt = require('jsonwebtoken')
 
 const bcrypt = require('bcrypt')
 
-
 const signup = async (req, res) => {
     try {
         const salt = bcrypt.genSaltSync(parseInt(process.env.BCRYPT_SALT))
