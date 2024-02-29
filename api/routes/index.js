@@ -1,10 +1,12 @@
 const router = require('express').Router()
 const AuthRouter = require('./auth.routes')// importamos
-const LineRouter = require('./line.routes')
+//const LineRouter = require('./line.routes')
+const checkAuth = require('./../middleware/checkAuth')
 
-//endpoints
+
+//endpoints 
 router.use('/auth',AuthRouter)
-router.use('/line',LineRouter)
+router.use('/line',checkAuth, require('./line.routes'))
 
 
 
