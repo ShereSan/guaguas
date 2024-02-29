@@ -5,7 +5,7 @@ const LineModel = require("../api/models/line.model")
 const dbSync = async () => {
     try{
          //await  UserModel.sync()
-         //await  LineModel.sync()
+         await  LineModel.sync()
          //console.log('DB Sync succesful')
 
     }catch(err){

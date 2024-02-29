@@ -4,11 +4,14 @@ const sequelize = require('../../db')
 const LineModel = sequelize.define('line', {
     number: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        unique: true
+
     },
     name: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
     }
 
 })

@@ -32,8 +32,10 @@ const login = async (req, res) => {
         if (!user) return res.status(400).send('Email/pass incorrect')
 
         if (!bcrypt.compareSync(req.body.password, user.password)) return res.status(400).send('password incorrect')
+
         const token = jwt.sign({
-            email:user.email},
+            email:user.email,
+        },
              process.env.JWT_SECRET)
             res.status(200).json({ token })
       
